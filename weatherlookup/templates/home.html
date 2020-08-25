@@ -2,12 +2,54 @@
 
 {% block content %}
 
-<h1>Hello World!!!</h1>
+<!-- <h1>Hello World!!!</h1>
+<br> -->
+
+<!-- {{ api }} -->
+<!-- <br>
+<br> -->
+<br>
+<h1>Weather of USA</h1>
+<!-- <br> -->
+
+<!-- If API exists then do all thesestuff-->
+{% if api %}
+
+	{% if api == "Error in calling API...." %}
+		Error has occured !!! Please try again...
+
+	{% else %}
+		Area Name: {{ api.0.ReportingArea }} <br/>
+		Air quality: {{ api.0.AQI }} <br/>
+		Category: {{ api.0.Category.Name }} 
+	{% endif %}
+
+{% endif %}
+<!--else do not do anything-->
+
+<br>
 <br>
 
-{{ api }} 
-<!-- <script src="https://www.yr.no/place/Nepal/Other/Api/external_box_three_days.js"></script> -->
-{{ api_nepal }}
-<!-- <noscript><a href="https://www.yr.no/place/Nepal/Other/Api/">yr.no: Forecast for Api</a></noscript> -->
+<!-- {{ api_nepal }} -->
 
+<h1>Weather of Nepal</h1>
+<!-- <br> -->
+<!-- {{ api_nepal.weather.10 }} -->
+<!-- If API exists then do all thesestuff-->
+{% if api %}
+
+	{% if api == "Error in calling API...." %}
+		Error has occured !!! Please try again...
+
+	{% else %}
+		Area Name: {{ api_nepal.weather.10.place }}<br/>
+		Maximum Temperature: {{ api_nepal.weather.10.max }}<br/>
+		Minimum Temperature: {{ api_nepal.weather.10.min }}
+	{% endif %}
+
+{% endif %}
+<!--else do not do anything-->
+
+<br>
+<br>
 {% endblock %}
