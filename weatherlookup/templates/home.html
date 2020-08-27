@@ -16,10 +16,13 @@
 		Error has occured !!! Please try again...
 
 	{% else %}
-		<div class="jumbotron moderate">
+		<div class="jumbotron {{ category_color }}">
 			<h1 class="my-4">Weather of USA</h1>
 			<h3 class="display-6">Air quality: {{ api.0.Category.Name }}</h1>
-				{% if api.0.Category.Name == "Good" %}
+
+
+				<p>{{ category_description }}</p>
+				<!-- {% if api.0.Category.Name == "Good" %}
 					<p>(0-50) Air quality is considered satisfactory.</p>
 
 				{% elif api.0.Category.Name == "Moderate" %}
@@ -36,10 +39,10 @@
 
 				{% elif api.0.Category.Name == "Hazardous" %}
 					<p>(300-500) Health warning of emergency condition.</p>
-				{% endif %}
+				{% endif %} -->
 
 
-			<p class="lead">Area Name: {{ api.0.ReportingArea }} <br> Category: {{ api.0.AQI }} </p>
+			<p class="lead"><b>Area Name: {{ api.0.ReportingArea }} <br> Category: {{ api.0.AQI }} </b></p>
 		</div>
 		 
 		
@@ -58,10 +61,10 @@
 		Error has occured !!! Please try again...
 
 	{% else %}
-		<div class="jumbotron">
+		<div class="jumbotron {{ category_color }}">
 			<h1 class="my-4">Weather of Nepal</h1>
 			<h3 class="display-8">Area Name: {{ api_nepal.weather.10.place }}</h1>
-			<p class="lead">Maximum Temperature: {{ api_nepal.weather.10.max }} <br> Minimum Temperature: {{ api_nepal.weather.10.min }} </p>
+			<p class="lead"><b>Maximum Temperature: {{ api_nepal.weather.10.max }} <br> Minimum Temperature: {{ api_nepal.weather.10.min }} </b></p>
 			<!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
 		</div>
 		
