@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+
+
 {% block content %}
 <!-- {{ api }} -->
 <!-- <br>
@@ -14,7 +16,7 @@
 		Error has occured !!! Please try again...
 
 	{% else %}
-		<div class="jumbotron">
+		<div class="jumbotron moderate">
 			<h1 class="my-4">Weather of USA</h1>
 			<h3 class="display-6">Air quality: {{ api.0.Category.Name }}</h1>
 				{% if api.0.Category.Name == "Good" %}
