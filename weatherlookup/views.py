@@ -6,7 +6,10 @@ def home(request):
 	import requests
 
 	if request.method == "POST":
+
+		
 		zipcode = request.POST['zipcode']
+		#districtnepal = request.POST['districtnepal']
 		
 		api_request = requests.get("http://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=" + zipcode + "&distance=5&API_KEY=504CB3FD-B442-47D4-A1E0-BC30B0F3CCED")
 		api_request_nepal = requests.get("https://nepal-weather-api.herokuapp.com/api/?place=all")
